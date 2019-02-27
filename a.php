@@ -69,7 +69,7 @@ Thể loại:
 <div class="list-group-item">urlvideo: <input type="text" name="urlvideo" value="'.$url.'"></div>
 <div class="list-group-item">Nội dung: <textarea name="content" rows="25">'.$title.''
 for ($i= 1; $i <= 15 ; $i++)
-{echo $xxxx.$i'.jpg';}
+{echo $xxxx.$i.'.jpg';}
 
 echo'</textarea></div>
 <div class="list-group-item"><input type="checkbox" name="comment" value="1" checked> Cho phép bình luận</div>
