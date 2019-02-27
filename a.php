@@ -67,11 +67,8 @@ Thể loại:
 <div class="list-group-item">Ảnh đại diện: <input type="text" name="thumb" value="'.$thumb.'" ></div>
 
 <div class="list-group-item">urlvideo: <input type="text" name="urlvideo" value="'.$url.'"></div>
-<div class="list-group-item">Nội dung: <textarea name="content" rows="25">'.$title.'';
-for ($i= 1; $i = 15 ; $i++)
-{echo $xxxx.$i.'.jpg';}
-
-echo'</textarea></div>
+<div class="list-group-item">Nội dung: <textarea name="content" rows="25">'.$title.'
+'.$thumb.'</textarea></div>
 <div class="list-group-item"><input type="checkbox" name="comment" value="1" checked> Cho phép bình luận</div>
 <div class="list-group-item"><center><button type="submit" class="btn btn-primary btn-block">Đăng bài</button></form></center></div>
 </div>'; 
