@@ -32,13 +32,16 @@ $title = curl_exec($curl);
 $title = explode('<title>',$title);
 $title = explode('</title>',$title[1]);
 $title = trim($title[0]);
-
+$title =  str_replace('- Pornhub.com','' ,$title);
 $thumb = curl_exec($curl);
 $thumb = explode('og:image" content="',$thumb);
 $thumb = explode('<meta property="og:video:url',$thumb[1]);
 $thumb = trim($thumb[0]);
 $thumb =  str_replace('" />','' ,$thumb);
 $thumb =  str_replace(' ','' ,$thumb);
+$xxxx = preg_replace('#(.*?)((.*?))((.*?))(.*?).jpg#is',"$1$2$3",$thumb);
+
+
 $lay = curl_exec($curl);
 $lay = explode('"720","videoUrl":"',$lay);
 $lay = explode('"},{"defaultQuality":true,"format":"mp4","quality":"480","videoUrl":"',$lay[1]);
@@ -64,7 +67,11 @@ Thể loại:
 <div class="list-group-item">Ảnh đại diện: <input type="text" name="thumb" value="'.$thumb.'" ></div>
 
 <div class="list-group-item">urlvideo: <input type="text" name="urlvideo" value="'.$url.'"></div>
-<div class="list-group-item">Nội dung: <textarea name="content" rows="25">'.$title.'</textarea></div>
+<div class="list-group-item">Nội dung: <textarea name="content" rows="25">'.$title.''
+for ($i= 1; $i <= 15 ; $i++)
+{echo $xxxx.$i'.jpg';}
+
+echo'</textarea></div>
 <div class="list-group-item"><input type="checkbox" name="comment" value="1" checked> Cho phép bình luận</div>
 <div class="list-group-item"><center><button type="submit" class="btn btn-primary btn-block">Đăng bài</button></form></center></div>
 </div>'; 
